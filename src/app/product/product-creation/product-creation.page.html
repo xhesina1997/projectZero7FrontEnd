@@ -1,0 +1,63 @@
+<ion-content style="width: 100%;">
+<div class="content">
+<div style="padding: 20px 30px">Sell an item</div>
+<div style="padding: 20px 55px;">
+  <form #form="ngForm" (ngSubmit)="createProduct(form)">
+    <ion-grid class="ptop">
+
+          <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-input  name="title"  placeholder="Title" ngModel ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-input  name="description"  placeholder="Description" ngModel></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-input name="price"  placeholder="Price" ngModel></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-input name="brand"  placeholder="Brand" ngModel></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-input name="size"  placeholder="Size" ngModel></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-input name="productColor"  placeholder="Color" ngModel></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-select placeholder="Category" name="categoryId" ngModel>
+                <ion-select-option *ngFor="let category of categories" [value]=category.id>{{category.name}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+        <div padding style="padding: 20px;">
+          <ion-button size="medium" type="submit" [disabled]="form.invalid" >Create</ion-button>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>
+</div>
+</ion-content>
+

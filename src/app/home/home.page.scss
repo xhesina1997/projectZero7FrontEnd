@@ -1,0 +1,44 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+.background-container{
+  background-image: url("https://customclosetmaid.com/wp-content/uploads/2020/05/01_ClosetMaid_MasterBedroom_Gallery_MasterSuite_ExpressShelf.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 50vh;
+
+}
+.card-container{
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  margin: -25px 0 0 -25px;
+  opacity: 0.9
+}
+.my-custom-menu {
+  --width: 500px;
+}

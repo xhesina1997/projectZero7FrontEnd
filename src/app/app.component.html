@@ -1,0 +1,37 @@
+<ion-app>
+  <ion-menu side="start" content-id="main-content">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Categories</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div  *ngFor="let category of categories" style="padding: 10px 60px;cursor:pointer">
+        <ion-text color="dark">
+          <h5>{{category.name}}</h5>
+        </ion-text>
+      </div>
+    </ion-content>
+  </ion-menu>
+    <ion-header style="width: 100%;">
+      <ion-toolbar>
+        <ion-buttons slot="start" class="custom-style-button">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-grid>
+          <ion-row>
+        <ion-title (click) = "goToHome()" style="cursor: pointer;">Vint</ion-title>
+
+        <ion-button *ngIf=" lclStorage.getItem('token') != null "
+        color="light" style="margin-right: 28px;" (click) = "logout()">Logout</ion-button>
+        <ion-button *ngIf=" lclStorage.getItem('token') == null "
+        color="light" style="margin-right: 28px;" (click) = "login()">Login/Register</ion-button>
+        </ion-row>
+
+        </ion-grid>
+      </ion-toolbar>
+    </ion-header>
+    <div class="ion-page" id="main-content">
+  <ion-router-outlet></ion-router-outlet>
+    </div>
+</ion-app>

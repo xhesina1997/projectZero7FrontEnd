@@ -1,0 +1,26 @@
+<ion-card class="card-container" style="margin:10% auto">
+  <form #form="ngForm" (ngSubmit)="login(form)">
+  <ion-card-header>
+    <ion-card-title style="font-size: 24px;">Log in</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div padding>
+      <ion-item>
+        <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+      </ion-item>
+    </div>
+    <div padding style="padding: 20px;">
+      <ion-button size="medium" type="submit" [disabled]="form.invalid" >Login</ion-button>
+    </div>
+    <ion-row>
+      <div text-center>
+    If you don't have an account, please <a routerLink='/register'>
+      register</a> first!
+      </div>
+  </ion-row>
+  </ion-card-content>
+  </form>
+  </ion-card>

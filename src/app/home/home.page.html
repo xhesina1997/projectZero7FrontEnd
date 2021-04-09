@@ -1,0 +1,26 @@
+<ion-app>
+    <ion-content class="ion-padding">
+      <div class="background-container">
+        <ion-card class="card-container">
+          <ion-card-header>
+            <ion-card-title style="font-size: 24px;">Ready to declutter your closet?</ion-card-title>
+            <ion-button color="secondary" (click)="goToProductCreation()">Sell now</ion-button>
+            <ion-card-subtitle>Learn how it works!</ion-card-subtitle>
+          </ion-card-header>
+          </ion-card>
+      </div>
+      <ion-grid style="padding: 20px 100px;">
+        <ion-row>
+        <ion-card *ngFor="let product of products | async " style="width: 500px;">
+          <ion-card-header>
+            <ion-card-title>{{product?.title}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            {{product?.description}}
+          </ion-card-content>
+        </ion-card>
+       </ion-row>
+       </ion-grid>
+    </ion-content>
+</ion-app>
