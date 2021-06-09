@@ -14,8 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './product/product.effects';
-import {  CloudinaryModule } from '@cloudinary/angular-5.x';
-import { Cloudinary } from 'cloudinary-core';
+
 
 
 
@@ -23,7 +22,7 @@ import { Cloudinary } from 'cloudinary-core';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule, StoreModule.forRoot({products: ProductReducer}, {}), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-  EffectsModule.forRoot([ProductEffects]),CloudinaryModule.forRoot(Cloudinary,{cloud_name:'vint'})],
+  EffectsModule.forRoot([ProductEffects])],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
      {
     provide: HTTP_INTERCEPTORS,

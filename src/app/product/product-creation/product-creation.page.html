@@ -2,9 +2,13 @@
 <div class="content">
 <div style="padding: 20px 30px">Sell an item</div>
 <div style="padding: 20px 55px;">
-  <form #form="ngForm" (ngSubmit)="createProduct(form)">
-    <ion-grid class="ptop">
+    <form #form="ngForm" (ngSubmit)="createProduct(form)" method="post" enctype="multipart/form-data">
+      <ion-grid class="ptop">
+      <ion-row>
+      <input class="custom-file-input" type="file" ng2FileSelect [uploader]="uploader"  multiple ngModel name="file" />
+    </ion-row>
 
+    <!-- <ion-button size="medium" color="light" [disabled]="form.invalid"  (click)="upload()" >Upload</ion-button> -->
           <ion-row>
           <ion-col size="6">
             <ion-item>

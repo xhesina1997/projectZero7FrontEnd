@@ -29,7 +29,7 @@ export function ProductReducer(
       case ProductActionType.ADD_PRODUCT:
         return  {...state,loading:true};
       case ProductActionType.ADD_PRODUCT_SUCCESS:
-        return  {...state, productList:[...state.productList, action.payload],loading:false};
+        return  {...state, productList:{...state.productList},loading:false};
         case ProductActionType.ADD_PRODUCT_FAILURE:
         return  {...state, error:action.payload,loading:false};
       default:

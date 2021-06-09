@@ -12,7 +12,7 @@ export class ProductEffects {
 
 loadingProducts$ = createEffect(() => this.actions$.pipe(
   ofType<ProductAction>(ProductActionType.GET_PRODUCT),
-    mergeMap(() => this.productService.getAllProducts(10,1)
+    mergeMap(() => this.productService.getAllProducts(20,1)
       .pipe(
         map(data => {return new GetProductSuccessAction(data)}),
         catchError(error => of(new GetProductFailureAction(error))))
